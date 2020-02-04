@@ -11,19 +11,12 @@ spring:
   application:
       name: microconfig-test-client
 
-    
 eureka:
-  client: # 客户端进行Eureka注册的配置
-    register-with-eureka: true
-    service-url:
-      defaultZone: http://admin:enjoy@172.17.0.2:7001/eureka
-#      defaultZone: http://admin:enjoy@eureka1:7001/eureka,http://admin:enjoy@eureka2:7002/eureka,http://admin:enjoy@eureka3:7003/eureka
-  instance:
-    instance-id: microconfig-test-client-id-test1
-    prefer-ip-address: true
-    lease-renewal-interval-in-seconds: 2 # 设置心跳的时间间隔（默认是30秒）
-    lease-expiration-duration-in-seconds: 5  # 如果现在超过了5秒的间隔（默认是90秒）
-   
+ client:
+  service-url:
+    defaultZone: http://admin:enjoy@172.17.0.2:7001/eureka
+    
+    
     
 ---
 server:
